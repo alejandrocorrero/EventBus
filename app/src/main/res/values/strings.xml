@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">BroadcastEjemplo</string>
+    <string name="resultado">numero $1%d resultado $2%d</string>
+</resources>
