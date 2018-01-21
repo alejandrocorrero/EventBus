@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         btn=findViewById(R.id.buttonTest);
+        //Metodo encargado de qjecutar algo cuando se recive el broadcast
         mReceptor= new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
@@ -34,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
             }
         };
         aleatorio=new Random();
+
+        //Creacion del servicio
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -41,14 +44,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
+    //Se crea un filtro de intents al crear la aplicacion, asi podemos filtrar por el servicio que creamos
     @Override
     protected void onResume() {
         super.onResume();
         IntentFilter intentFilter = new IntentFilter(MiServicio.ACTION_FACTORIAL);
         registerReceiver(mReceptor,intentFilter);
     }
-
+    //Se elimina la captacion del filtro al cerrar la app
     @Override
     protected void onPause() {
         super.onPause();
