@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    //Se crea un filtro de intents al crear la aplicacion, asi podemos filtrar por el servicio que creamos
+    //Se crea un filtro de intents al crear la aplicacion, asi podemos filtrar por el servicio que creamos2
     @Override
     protected void onResume() {
         super.onResume();
